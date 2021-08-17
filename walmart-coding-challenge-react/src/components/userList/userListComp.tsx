@@ -7,10 +7,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
 import { useSelector } from "react-redux";
 import { State } from "../../redux";
 import { IAppState, IUser } from "../../redux/stateStructure";
+import UserAvatar from '../Avatar/AvatarComp'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,6 +55,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function BottomAppBar() {
   const classes = useStyles();
   const state: IAppState | null = useSelector((state: State) => state.login);
+  // let profilePhoto:string = "default.png";
+  // if(state)profilePhoto=state.loggedUser.profilePhoto;
   let currUser: string;
   let userArr: IUser[];
   if (state) {
@@ -74,13 +76,13 @@ export default function BottomAppBar() {
             All users
           </Typography>
           <List className={classes.list} style={{maxHeight: '100%', overflow: 'auto'}}>
-            {userArr.map(({ username, fname, lname, address }) => (
+            {userArr.map(({ username, fname, lname, address, profilePhoto }) => (
               <React.Fragment key={username}>
                 {username !== currUser?(
                 <ListItem button>
                   <ListItemAvatar>
                     {/* <Avatar alt="Profile Picture" src={imageAddress} /> */}
-                    <Avatar src="/broken-image.jpg" />
+                    <UserAvatar profilePhoto={profilePhoto} />
                   </ListItemAvatar>
                   <ListItemText
                     primary={`@${username} (${fname} ${lname})`}

@@ -52,7 +52,7 @@ const LoginComponent = () => {
 
   const handleEmail = async (eve: SyntheticEvent) => {
     eve.preventDefault();
-    if (username === "") {
+    if (!username) {
       setValidUser(false);
       return;
     }

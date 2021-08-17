@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "../views/homePageView";
 import RedirectHome from '../components/redirects/toMainPage'
-import ViewProfile from '../components/viewProfile/viewProfileComp'
+import NotFound from "../views/ResourceNotFoundView";
 
 const IsLoggedRouter = () => {
   return (
@@ -10,7 +10,7 @@ const IsLoggedRouter = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/home" component={HomePage} />
-          <Route path="/profile" component={ViewProfile} />
+          <Route path="/404" component={NotFound} />
           <Route path="/" component={RedirectHome} />
         </Switch>
       </BrowserRouter>

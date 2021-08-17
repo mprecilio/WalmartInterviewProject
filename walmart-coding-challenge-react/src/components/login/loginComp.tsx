@@ -59,7 +59,7 @@ const LoginComponent = () => {
 
   const handleLogin = async (eve: SyntheticEvent) => {
     eve.preventDefault();
-    if (username === "" || password === "") {
+    if (!username || !password) {
         setValidLogin(false);
         return;
     }

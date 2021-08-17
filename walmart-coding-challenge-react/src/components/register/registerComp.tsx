@@ -70,13 +70,13 @@ const RegisterComp = () => {
     setValidUsername(true);
     setValidEmail(true);
     if (
-      username === "" ||
-      password === "" ||
-      fname === "" ||
-      lname === "" ||
-      dob === "" ||
-      address === "" ||
-      email === ""
+      !username ||
+      !password ||
+      !fname ||
+      !lname ||
+      !dob ||
+      !address ||
+      !email
     ) {
       setValidRegister(false);
       return;
@@ -229,7 +229,7 @@ const RegisterComp = () => {
                   color="primary"
                   onClick={handleRegister}
                 >
-                  Login
+                  Register
                 </Button>
               </form>
             </Grid>
@@ -374,7 +374,7 @@ const RegisterComp = () => {
                   color="primary"
                   onClick={handleRegister}
                 >
-                  Login
+                  Register
                 </Button>
               </form>
             </Grid>

@@ -33,8 +33,19 @@ public class UserServiceImpl implements UserService {
 	public List<User> getAllUsers() {
 		return userDao.findAll();
 	}
+
 	
 	////////////////////////////////////////////////// UPDATE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	@Override
+	public User updateUserInfo(User updateInfo) {
+		User storedUser = userDao.findByUsername(updateInfo.getUsername());
+		if(!updateInfo.getFname().equals(""))storedUser.setFname(updateInfo.getFname());
+		if(!updateInfo.getLname().equals(""))storedUser.setLname(updateInfo.getLname());
+		if(!(updateInfo.getDob()==(null))) storedUser.setDob(updateInfo.getDob());
+		if(!updateInfo.getAddress().equals(""))storedUser.setAddress(updateInfo.getAddress());
+		if(!updateInfo.getProfilePhoto().equals(""))storedUser.setProfilePhoto(updateInfo.getProfilePhoto());
+		return userDao.save(storedUser);
+	}
 
 	////////////////////////////////////////////////// DELETE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

@@ -61,6 +61,11 @@ const LoginComponent = () => {
   const handleReset = async (eve: SyntheticEvent) => {
     eve.preventDefault();
     setValidReset(true);
+    if(!password || !confirmPassword) {
+      setValidReset(false)
+      return;
+    }
+    setValidReset(true);
     setResetResult(0);
     if (password !== confirmPassword) {
       setValidReset(false);

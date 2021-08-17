@@ -38,9 +38,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const LoginView = () => {
   const classes = useStyles();
-  const filler: string =
+  const fillerShort: string =
     "Cupcake ipsum dolor sit amet I love tiramisu. Pudding candy canes cake muffin dessert caramels chupa chups I love. Cupcake I love liquorice marzipan oat cake gingerbread chocolate bar.";
-
+  const filler: string = 
+    "Cupcake ipsum dolor sit amet brownie croissant. Liquorice marshmallow cheesecake caramels fruitcake oat cake halvah. Carrot cake jujubes dragée lollipop brownie ice cream lemon drops chupa chups dragée. Toffee cookie chocolate cake croissant lemon drops. Sugar plum macaroon sugar plum jelly-o candy canes cheesecake topping. Candy canes tootsie roll fruitcake muffin chocolate bear claw. Gingerbread lollipop chocolate jelly chupa chups powder."
   return (
     <div className={classes.root}>
       <Nav />
@@ -54,7 +55,7 @@ const LoginView = () => {
                 <Grid item xs={6}>
                   <Paper className={classes.paper}>
                     <h2>News:</h2>
-                    <p>{filler}</p>
+                    <p>{fillerShort}</p>
                   </Paper>
                 </Grid>
                 <Grid item xs={6}>
@@ -77,7 +78,7 @@ const LoginView = () => {
             <Grid item xs={6}>
               <Paper className={classes.paper}>
                 <h2>Events:</h2>
-                <p>{filler}</p>
+                <p>{fillerShort}</p>
               </Paper>
             </Grid>
             <Grid item xs={6}>

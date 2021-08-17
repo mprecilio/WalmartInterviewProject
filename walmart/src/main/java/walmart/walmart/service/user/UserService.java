@@ -18,7 +18,7 @@ public interface UserService {
 	public List<User> getAllUsers();
 		
 	//////////////////////////////////////////////////UPDATE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-		
+	public User updateUserInfo(User updateInfo);
 		
 	//////////////////////////////////////////////////DELETE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	
