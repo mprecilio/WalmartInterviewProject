@@ -74,7 +74,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>WalmartInterviewProject</finalName>
+		<finalName>walmart-interview-project</finalName>
 	</build>
 
 </project>
