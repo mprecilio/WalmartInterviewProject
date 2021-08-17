@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mywalmart-dev-02330-authRole",
+      "UnauthRoleArn": "arn:aws:iam::317198976525:role/amplify-mywalmart-dev-02330-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::317198976525:role/amplify-mywalmart-dev-02330-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-mywalmart-dev-02330-deployment",
+      "UnauthRoleName": "amplify-mywalmart-dev-02330-unauthRole",
+      "StackName": "amplify-mywalmart-dev-02330",
+      "StackId": "arn:aws:cloudformation:us-east-2:317198976525:stack/amplify-mywalmart-dev-02330/19f397e0-fe52-11eb-a28d-06251c9d69f8",
+      "AmplifyAppId": "d3cr9nnxdifaa0"
+    },
+    "categories": {
+      "auth": {
+        "mywalmarte69c3966": {}
+      }
+    }
+  }
+}
