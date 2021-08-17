@@ -9,10 +9,6 @@ node_modules/
 ### Gradle ###
 .gradle
 
-### Java Files ###
-test/
-resources/
-HibernateSessionGenrator.java
 
 ### Maven ###
 target/

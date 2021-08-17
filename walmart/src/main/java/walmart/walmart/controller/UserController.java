@@ -16,7 +16,7 @@ import walmart.walmart.service.user.UserService;
 
 @NoArgsConstructor
 @RestController
-@CrossOrigin(origins="http://localhost:3000", allowCredentials="true")
+@CrossOrigin(origins="*")
 @RequestMapping("/user-service")
 public class UserController {
 	
