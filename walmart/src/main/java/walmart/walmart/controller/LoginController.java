@@ -16,7 +16,7 @@ import walmart.walmart.service.login.LoginService;
 
 @NoArgsConstructor
 @RestController
-@CrossOrigin(origins="http://localhost:3000", allowCredentials="true")
+@CrossOrigin(origins="*")
 @RequestMapping("/login-service")
 public class LoginController {
 
