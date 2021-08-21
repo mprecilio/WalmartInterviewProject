@@ -12,8 +12,13 @@ interface Register{
     payload: IAppState
 }
 
+interface Update{
+    type: ActionType.UPDATE
+    payload: IAppState
+}
+
 interface Logout{
     type: ActionType.LOGOUT
 }
 
-export type LoginActions = Login | Register | Logout
+export type SetState = Login | Register | Logout | Update

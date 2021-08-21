@@ -55,8 +55,6 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function BottomAppBar() {
   const classes = useStyles();
   const state: IAppState | null = useSelector((state: State) => state.login);
-  // let profilePhoto:string = "default.png";
-  // if(state)profilePhoto=state.loggedUser.profilePhoto;
   let currUser: string;
   let userArr: IUser[];
   if (state) {
@@ -81,7 +79,6 @@ export default function BottomAppBar() {
                 {username !== currUser?(
                 <ListItem button>
                   <ListItemAvatar>
-                    {/* <Avatar alt="Profile Picture" src={imageAddress} /> */}
                     <UserAvatar profilePhoto={profilePhoto} />
                   </ListItemAvatar>
                   <ListItemText

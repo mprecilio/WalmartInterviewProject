@@ -2,8 +2,7 @@ import * as React from "react";
 import { Storage } from "aws-amplify";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import { useSelector } from "react-redux";
-import { State } from "../../redux";
+import { EditProfileContext } from "../navbar/navbarContext";
 
 export interface IProps {
 }
@@ -24,19 +23,23 @@ const useStyles = makeStyles((theme: Theme) => ({
 const UserAvatar: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles();
   let intialState: any;
-  const myImg = useSelector((state: State) => state.login?.loggedUser.profilePhoto);
-  let imageKey: string ='';
-  if(myImg) imageKey = myImg;
   const [profilePhoto, setProfilePhoto] = React.useState(intialState);
+  const { imgKey } = React.useContext(EditProfileContext);
 
     React.useEffect(()=>{
         fetchImages()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
+    },[imgKey]);
 
   async function fetchImages() {
-    const signedUrl = await Storage.get(imageKey);
-    setProfilePhoto(signedUrl);
+    if(imgKey){
+      const signedUrl = await Storage.get(imgKey);
+      setProfilePhoto(signedUrl);
+    }
+    else{
+      const signedUrl = await Storage.get('default.png');
+      setProfilePhoto(signedUrl);
+    }
   }
 
   return (
