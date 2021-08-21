@@ -1,14 +1,11 @@
 import axios from 'axios';
 import { IAppState, IUser } from '../../redux/stateStructure';
-
-const instance = axios.create({
-    withCredentials: true
-});
+import { url } from '../../redux/service';
 
 export const axiosUpdateInfo = async (state: IAppState|null, fname: string, lname: string, dob: string, address:string, profilePhoto:string) => {
     
     
-    const loginResult = await instance.put('http://localhost:9005/user-service/update-user-info', {
+    const loginResult = await axios.put(`${url}/user-service/update-user-info`, {
         "username":state?.loggedUser.username,
         "fname": fname,
         "lname": lname,

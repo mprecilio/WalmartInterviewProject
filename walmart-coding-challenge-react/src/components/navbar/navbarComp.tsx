@@ -9,13 +9,17 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { bindActionCreators } from "redux";
 import { ActionCreators, State } from "../../redux";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { IAppState } from "../../redux/stateStructure";
 import ViewProfile from "../profile/viewProfileComp";
 import EditProfile from "../profile/editProfileComp";
-import { ProfileContext, EditProfileContext, OffCanvasContext } from "./navbarContext";
-import UserAvatar from '../Avatar/AvatarCompSmall';
-import OffCanvasComp from '../offCanvas/offCanvas'
+import {
+  ProfileContext,
+  EditProfileContext,
+  OffCanvasContext,
+} from "./navbarContext";
+import UserAvatar from "../Avatar/AvatarCompSmall";
+import OffCanvasComp from "../offCanvas/offCanvas";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,17 +40,18 @@ export default function NavBar() {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const state:IAppState|null = useSelector((state: State) => state.login);
+  const state: IAppState | null = useSelector((state: State) => state.login);
   const { logout } = bindActionCreators(ActionCreators, dispatch);
-  let myImg = useSelector((state: State) => state.login?.loggedUser.profilePhoto);
-  let imagekey:string ="default.png";
-  if(myImg) imagekey = myImg;
+  let myImg = useSelector(
+    (state: State) => state.login?.loggedUser.profilePhoto,
+    shallowEqual
+  );
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [viewProfile, setViewProfile] = React.useState(false);
   const [editProfile, setEditProfile] = React.useState(false);
   const [toggleOffcanvas, setToggleOffcanvas] = React.useState(false);
-  const [imgKey, setImgKey] = React.useState(imagekey);
+  const [imgKey, setImgKey] = React.useState(myImg!);
   const open = Boolean(anchorEl);
 
   const handleMenu = (event: any) => {
@@ -66,9 +71,9 @@ export default function NavBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
-            onClick={()=>setToggleOffcanvas(!toggleOffcanvas)}
+            onClick={() => setToggleOffcanvas(!toggleOffcanvas)}
           >
-            <MenuIcon  />
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             {"Welcome " +
@@ -84,7 +89,11 @@ export default function NavBar() {
               onClick={handleMenu}
               color="inherit"
             >
-              <UserAvatar  />
+              <EditProfileContext.Provider
+                value={{ editProfile, setEditProfile, imgKey, setImgKey }}
+              >
+                <UserAvatar />
+              </EditProfileContext.Provider>
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -129,16 +138,19 @@ export default function NavBar() {
           </div>
         </Toolbar>
       </AppBar>
-      <ProfileContext.Provider value={{viewProfile, setViewProfile}}>
+      <ProfileContext.Provider value={{ viewProfile, setViewProfile }}>
         {viewProfile && <ViewProfile />}
       </ProfileContext.Provider>
-      <EditProfileContext.Provider value={{editProfile, setEditProfile, imgKey, setImgKey}}>
+      <EditProfileContext.Provider
+        value={{ editProfile, setEditProfile, imgKey, setImgKey }}
+      >
         {editProfile && <EditProfile />}
       </EditProfileContext.Provider>
-      <OffCanvasContext.Provider value={{toggleOffcanvas, setToggleOffcanvas}}>
+      <OffCanvasContext.Provider
+        value={{ toggleOffcanvas, setToggleOffcanvas }}
+      >
         {<OffCanvasComp />}
       </OffCanvasContext.Provider>
-      
     </div>
   );
 }

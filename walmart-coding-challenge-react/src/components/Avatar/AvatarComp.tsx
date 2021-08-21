@@ -3,6 +3,7 @@ import { Storage } from "aws-amplify";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 
+
 export interface IProps {
   profilePhoto: string;
 }
@@ -22,8 +23,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const UserAvatar: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles();
-  let intialState: any;
-  const [profilePhoto, setProfilePhoto] = React.useState(intialState);
+  let initialState: any;
+  const [profilePhoto, setProfilePhoto] = React.useState(initialState);
 
     React.useEffect(()=>{
         fetchImages()

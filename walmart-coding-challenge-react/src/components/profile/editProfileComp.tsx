@@ -19,7 +19,6 @@ import { useEffect } from "react";
 import { axiosUpdateInfo } from './serviceEditProfile'
 import { bindActionCreators } from "redux";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme:Theme)=>({
   root: {
@@ -63,9 +62,7 @@ interface IProps {}
 export default function MediaCard(props: IProps) {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { login } = bindActionCreators(ActionCreators, dispatch);
-
-  const history = useHistory();
+  const { update } = bindActionCreators(ActionCreators, dispatch);
 
   const state: IAppState | null = useSelector((state: State) => state.login);
 
@@ -86,11 +83,13 @@ export default function MediaCard(props: IProps) {
   const [profilePhoto, setProfilePhoto] = React.useState(currPicture);
   const [compTempKey, setTempKey] = React.useState(imageKey);
   const { editProfile, setEditProfile, setImgKey } = useContext(EditProfileContext);
+  
+
 
   const handleSubmit = async (eve: SyntheticEvent) => {
     eve.preventDefault();
     const newAppState : IAppState | null =  await axiosUpdateInfo(state, fname, lname, dob, address, compTempKey);
-    if(newAppState) login(newAppState)
+    if(newAppState) update(newAppState)
     fetchImages(compTempKey);
     setImgKey(compTempKey)
     console.log("checkpoint 1");
@@ -106,8 +105,9 @@ export default function MediaCard(props: IProps) {
     if(!eve.target.files) return;
     const file = eve.target.files[0];
     if(!file.name)return;
-    await Storage.put(file.name, file);
-    setTempKey(file.name);
+    const fileName = Date.now()+""+file.name
+    await Storage.put(fileName, file);
+    setTempKey(fileName);
   };
 
   return (
@@ -151,7 +151,6 @@ export default function MediaCard(props: IProps) {
                 style={{ marginTop: "10px", marginLeft: "90%" }}
                 onClick={() => {
                   setEditProfile(false)
-                  history.push('/refresh')
                 }}
               />
 

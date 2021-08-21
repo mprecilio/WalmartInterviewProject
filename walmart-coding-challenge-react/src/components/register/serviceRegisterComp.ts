@@ -1,13 +1,10 @@
 import axios from 'axios';
 import { IAppState, IUser } from '../../redux/stateStructure';
-
-const instance = axios.create({
-    withCredentials: true
-});
+import { url } from '../../redux/service';
 
 export const axiosRegister = async (username: string, password: string, fname: string, lname: string, dob: string, address: string, email: string) => {
 
-    const loginResult = await instance.post('http://localhost:9005/login-service/register', {
+    const loginResult = await axios.post(`${url}/login-service/register`, {
         "username": username,
         "password": password,
         "fname":fname,
@@ -26,7 +23,7 @@ export const axiosRegister = async (username: string, password: string, fname: s
         return appState;
     }
 
-    const usersResult = await instance.get('http://localhost:9005/user-service/get-all-users');
+    const usersResult = await axios.get(`${url}/user-service/get-all-users`);
     const usersData : IUser[] = usersResult.data;
     const appState :IAppState = {
         loggedUser : loginData,

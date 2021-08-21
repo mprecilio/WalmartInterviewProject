@@ -16,4 +16,4 @@ export const store = createStore(
 
 // Create-react-app redux boilerplate
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type State = ReturnType<typeof store.getState>;
