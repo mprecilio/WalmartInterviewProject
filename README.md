@@ -21,14 +21,14 @@ A college portal to key in student first and last name as well as DOB, address a
 ## Features
 
 Users can:
-• Register
-• Login/Logout.
-• Reset their password.
-   o Email token authentication.
-• Modify their information.
-• Upload a profile picture (using AWS: S3).
-• View his own profile.
-   o Including posts.
+* Register
+* Login/Logout.
+* Reset their password.
+   - Email token authentication.
+* Modify their information.
+* Upload a profile picture (using AWS: S3).
+* View his own profile.
+   - Including posts.
 
 To-do list:
 * Add JWTs for authentication
