@@ -36,11 +36,11 @@ To-do list:
 
 ## Getting Started
    
-Clone the repository: git clone https://github.com/mprecilio/WalmartInterviewProject.git
-Enviornment variables required: (Please set the enviornment variables in the Dockerfile located in the ./walmart repository)
-2108_EMAIL    - Email account used to use to send a reset password email
+* Clone the repository: git clone https://github.com/mprecilio/WalmartInterviewProject.git
+* Enviornment variables required: (Please set the enviornment variables in the Dockerfile located in the ./walmart repository)
+* 2108_EMAIL    - Email account used to use to send a reset password email
                     -Note email must allow access "Less secure app access"
-2108_PASSWORD - Password associated with that email
+* 2108_PASSWORD - Password associated with that email
 
 - All the `code` required to get started can be found in the WalmartInterviewProject repository
 - Images of what it should look like can be found in the screenshots directory
