@@ -13,6 +13,6 @@ Robust test generation on all platforms:
 ## To learn more about katalon:
 https://www.katalon.com/
 
-## Please note most of the information provided came directely from Katalon's webpage
+# Please note most of the information provided came directely from Katalon's webpage
 
 
