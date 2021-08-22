@@ -49,8 +49,8 @@ class LoginControllerTest {
 	void register() {
 		//Arrange
 		byte[] salt = {-43,-100,-60,-99,-111};
-		User testUser = new User(1, "admin", salt, "admin", "Matthew", "Precilio", new Date(98, 1, 8), "1061 Morning View Dr, Gallatin TN, 37066", "default.png", "h9sgh9dghwibnbjsbg98bwjbkjb", "mprecilio@gmail.com");
-		User expectedUser = new User(1, "admin", salt, "B5905DC0A373DDA44F1BC3BB9127F68BF1BA10D878BA4C68AA45341331621AA1", "Matthew", "Precilio", new Date(98, 1, 8), "1061 Morning View Dr, Gallatin TN, 37066", "default.png", "h9sgh9dghwibnbjsbg98bwjbkjb", "mprecilio@gmail.com");
+		User testUser = new User(1, "admin", "admin", salt, "admin", "Matthew", "Precilio", new Date(98, 1, 8), "1061 Morning View Dr, Gallatin TN, 37066", "default.png", "h9sgh9dghwibnbjsbg98bwjbkjb", "mprecilio@gmail.com");
+		User expectedUser = new User(1, "admin", "admin", salt, "B5905DC0A373DDA44F1BC3BB9127F68BF1BA10D878BA4C68AA45341331621AA1", "Matthew", "Precilio", new Date(98, 1, 8), "1061 Morning View Dr, Gallatin TN, 37066", "default.png", "h9sgh9dghwibnbjsbg98bwjbkjb", "mprecilio@gmail.com");
 		when(loginServ.save(testUser)).thenReturn(expectedUser);
 		//Act
 		User actualUser = loginControl.register(testUser);

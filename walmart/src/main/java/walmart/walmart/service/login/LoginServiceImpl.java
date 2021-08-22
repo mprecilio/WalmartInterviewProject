@@ -35,7 +35,7 @@ public class LoginServiceImpl implements LoginService{
 				|| newUser.getEmail().equals("") || newUser.getLname().equals("") 
 				|| newUser.getDob().equals("")) return null;
 		//checks if username is taken
-		if(loginDao.existsByUsername(newUser.getUsername())) return new User(-1);
+		if(loginDao.existsByUsernameLower(newUser.getUsername().toLowerCase())) return new User(-1);
 		if(loginDao.existsByEmail(newUser.getEmail())) return new User(-2);
 		//adds salt and encrypts the password
 		byte[] salt = ToEncrypted.createSalt();
@@ -49,14 +49,16 @@ public class LoginServiceImpl implements LoginService{
 		newUser.setToken(RandomToken.randomToken());
 		//adds default image
 		newUser.setProfilePhoto("default.png");
+		//converts name to lowercase
+		newUser.setUsernameLower(newUser.getUsername().toLowerCase());
 		return loginDao.save(newUser);
 	}
 	
 	//////////////////////////////////////////////////READ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	@Override
 	public User login(User userLoggingIn) {
-		if(!loginDao.existsByUsername(userLoggingIn.getUsername())) return new User(-1);
-		User matchingUser = loginDao.findByUsername(userLoggingIn.getUsername());
+		if(!loginDao.existsByUsernameLower(userLoggingIn.getUsername().toLowerCase())) return new User(-1);
+		User matchingUser = loginDao.findByUsernameLower(userLoggingIn.getUsername().toLowerCase());
 		byte[] storedSalt = matchingUser.getSalt();
 		String loginPassHashed="";
 		try {

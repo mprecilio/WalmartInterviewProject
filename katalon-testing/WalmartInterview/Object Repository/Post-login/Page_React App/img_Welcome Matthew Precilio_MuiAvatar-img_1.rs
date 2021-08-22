@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>img_Welcome Matthew Precilio_MuiAvatar-img_1</name>
+   <tag></tag>
+   <elementGuidId>d70ec2cb-fb32-4bb4-834d-f15ad80c5454</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='root']/div/div/header/div/div/button/span/div/img</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>img.MuiAvatar-img</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>img</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>alt</name>
+      <type>Main</type>
+      <value>Remy Sharp</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>src</name>
+      <type>Main</type>
+      <value>https://mywalmart9f0b0ae38d774fb4b83e47058f2e5ea302330-dev.s3.us-east-2.amazonaws.com/public/162959943902782136838_2694313897271427_6136657682070765568_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAUTWUIIYGXEFQKHAJ%2F20210822%2Fus-east-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20210822T041107Z&amp;X-Amz-Expires=900&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjELz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJIMEYCIQCllFnTV4eHRzqzwgOuE3Aj8AKum2o2gzYUFRMmBr6gAgIhAIDqvd3RVJuLVu9jDH+7KxOKCghoX9HqD418zs%2Fm3hHTKpoGCOX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMzE3MTk4OTc2NTI1IgxTyS9FcwRJuID%2FCH0q7gWgQ%2FZ%2F410Mu4ZfADGJe%2F9%2Fab41%2FQGPah0cEdfCkKJ5YoJNE9hFdST4uKoePgYlCC427laCUz2ZQSw4qTrBW9%2FJJz%2FREjRaEJY+hLx0hETZiAVH%2FosZM4DKlQJTA+Q8VU8mpTHc+Fz6JYA86U%2FDAww3pRrxXhkDw7PEYYGrHPufmMCex0XL40g7H8Yu0KA32BbprXZLtuUXs0ctFQG0Eho93TyCot8vAt5qRL50vl8vT+UC4SVtZMlzI1KMRI60qSL2hupbQuXkV+lmd77xYoDjRTQFi8bZZ7ahevzMSira3nu3I6IBX4vBUW%2F7HJNMc2Wsm3cvX2r98UUANt7H44f7XnlgpV7z%2FT3OHCZP%2FjbveX4R+YA5pUfJ4eIhANwN6IT2wwyZ9KjQ69z1QG4FnfnZFl%2Fga6DpbY6Xajm8BTkoc+a3VoZm71YC7pZkWA8Lu0anNQGTnJ2GKAgMWX7nyFbUBjv1RncIiWRDPrTGhlxz06lHX0d%2FxkYF+czioQowRt6FKHW2+AjdGpi5AaTUA2FPSauR+nLUz4U6wfScS44nXDRscFwSJ6qdZgg5o4JoIi7DiIZTj%2FJ8h9%2FQ8eBeA7WHp6CJeVbsXy+JQaXELE3Mo9fkjXp0mhBGRzQJfcaKfKlVcJZZcVavwZ6eKUf%2FC9lptAdFOMsbM1YdiBdxTRLhus2V6qsAUNNN45Ygy7emf+mI0QZgtSSrWfjdgBwclCWDG4TTlVl4g6iErQ41W4YVq0jxmmexJ99QH7kpJtm45XpqVSkGButw%2Fg+eXsXbt4i0tWg2dFYbZn9eeBSh2g1PwDkmas5w7iWjAleLgbVOyjNy4rZbY44lzHmXu6ik3WJcmWZfQN3hpAbcQu2ti339T6CGdSNs5TgrkzNTVNO+ssYH5wqi5%2Fr0LyhvUAHNWUIC0AqWGuZ2+4APjwQ1Kdt56ERmmB6Tsdn04b2YCINWWA8ySprxKCweXefzpQL5gytJBTK5GKRJj8UlVc+6bQQw0ZuHiQY6hgKgK6MIp2mu1hwOtZo3zhwKRf4984McDZuQXTUI1TzG%2FhFN3iOMEg3nanPOWyLo8%2FC%2FxvBcN13KAYTNGE9BngNIUE1PInAuE556f+O4VEoKt7SzbChIf8ABZHATJ2qzcZufQFh2WrIDBKq6WUJN+KglauEWx7V5OiJb7BUvNvB7WopPEx6og7y075suB%2FFVrX3triBUzG%2FJuf%2Fy1y5Ie4We43H4smlEP6IgCozMyWWsSB8snrXds0LqRy2jBI9wq3C%2Fcm4Bms41XUcWoVD9huSKANe4xN+wKHDbdwVR5hvbU9XOns4a+m9Y9bF+k8yY9N0uYdDwqKzbD6%2Fe4tlQk0c48stj5P0A&amp;X-Amz-Signature=d9f0361d02d9f54d70cd1c7b95b000dd89a38413f28c3de937e86839dd3b29c8&amp;X-Amz-SignedHeaders=host&amp;x-amz-user-agent=aws-sdk-js%2F3.6.1%20os%2FWindows%2FNT_10.0%20lang%2Fjs%20md%2Fbrowser%2FChrome_92.0.4515.159%20api%2Fs3%2F3.6.1%20aws-amplify%2F4.2.2_js&amp;x-id=GetObject</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>MuiAvatar-img</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;makeStyles-root-10&quot;]/header[@class=&quot;MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4&quot;]/div[@class=&quot;MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters&quot;]/div[1]/button[@class=&quot;MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit&quot;]/span[@class=&quot;MuiIconButton-label&quot;]/div[@class=&quot;MuiAvatar-root MuiAvatar-circular makeStyles-small-14&quot;]/img[@class=&quot;MuiAvatar-img&quot;]</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div/header/div/div/button/span/div/img</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:img</name>
+      <type>Main</type>
+      <value>//img[@alt='Remy Sharp']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//img</value>
+   </webElementXpaths>
+</WebElementEntity>
