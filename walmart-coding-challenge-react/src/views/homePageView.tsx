@@ -1,47 +1,47 @@
-import React from "react";
-import Nav from "../components/navbar/navbarComp";
-import UserList from "../components/userList/userListComp";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import PhotoCarousel from "../components/photoCarousel/photoCarousel";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Nav from '../components/navbar/navbarComp'
+import UserList from '../components/userList/userListComp'
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import PhotoCarousel from '../components/photoCarousel/photoCarousel'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-      backgroundColor: "black",
-      maxWidth:'100%'
+      backgroundColor: 'black',
+      maxWidth: '100%'
     },
     paper: {
       padding: theme.spacing(2),
-      margin: "20px",
-      marginBottom: "10px",
-      textAlign: "left",
-      color: theme.palette.text.secondary,
+      margin: '20px',
+      marginBottom: '10px',
+      textAlign: 'left',
+      color: theme.palette.text.secondary
     },
     paperBottom: {
       padding: theme.spacing(2),
-      margin: "20px",
-      marginBottom: "0px",
-      textAlign: "left",
-      color: theme.palette.text.secondary,
+      margin: '20px',
+      marginBottom: '0px',
+      textAlign: 'left',
+      color: theme.palette.text.secondary
     },
     UserList: {
-      position: "sticky",
-      top: "64px",
-      minWidth: "275",
-    },
+      position: 'sticky',
+      top: '64px',
+      minWidth: '275'
+    }
   })
-);
+)
 
 const LoginView = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   const fillerShort: string =
-    "Cupcake ipsum dolor sit amet I love tiramisu. Pudding candy canes cake muffin dessert caramels chupa chups I love. Cupcake I love liquorice marzipan oat cake gingerbread chocolate bar.";
-  const filler: string = 
-    "Cupcake ipsum dolor sit amet brownie croissant. Liquorice marshmallow cheesecake caramels fruitcake oat cake halvah. Carrot cake jujubes dragée lollipop brownie ice cream lemon drops chupa chups dragée. Toffee cookie chocolate cake croissant lemon drops. Sugar plum macaroon sugar plum jelly-o candy canes cheesecake topping. Candy canes tootsie roll fruitcake muffin chocolate bear claw. Gingerbread lollipop chocolate jelly chupa chups powder."
+    'Cupcake ipsum dolor sit amet I love tiramisu. Pudding candy canes cake muffin dessert caramels chupa chups I love. Cupcake I love liquorice marzipan oat cake gingerbread chocolate bar.'
+  const filler: string =
+    'Cupcake ipsum dolor sit amet brownie croissant. Liquorice marshmallow cheesecake caramels fruitcake oat cake halvah. Carrot cake jujubes dragée lollipop brownie ice cream lemon drops chupa chups dragée. Toffee cookie chocolate cake croissant lemon drops. Sugar plum macaroon sugar plum jelly-o candy canes cheesecake topping. Candy canes tootsie roll fruitcake muffin chocolate bear claw. Gingerbread lollipop chocolate jelly chupa chups powder.'
   return (
     <div className={classes.root}>
       <Nav />
@@ -61,15 +61,15 @@ const LoginView = () => {
                 <Grid item xs={6}>
                   <Paper className={classes.paper}>
                     <h5>Trending:</h5>
-                    <Link to="/">Schedule of classes</Link>
+                    <Link to='/'>Schedule of classes</Link>
                     <br />
-                    <Link to="/">Transcript</Link>
+                    <Link to='/'>Transcript</Link>
                     <br />
-                    <Link to="/">Parking account management</Link>
+                    <Link to='/'>Parking account management</Link>
                     <br />
-                    <Link to="/">Campus Card</Link>
+                    <Link to='/'>Campus Card</Link>
                     <br />
-                    <Link to="/">Dining hall hours</Link>
+                    <Link to='/'>Dining hall hours</Link>
                     <br />
                   </Paper>
                 </Grid>
@@ -105,7 +105,7 @@ const LoginView = () => {
         </Grid>
       </Grid>
     </div>
-  );
-};
+  )
+}
 
-export default LoginView;
+export default LoginView

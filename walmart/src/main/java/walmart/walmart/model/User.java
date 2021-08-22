@@ -41,6 +41,10 @@ public class User {
 	@Column(name="username", nullable = false, unique = true)
 	private String username;
 	
+	@JsonProperty(access = Access.WRITE_ONLY)
+	@Column(name="username_lower", nullable = false, unique = true)
+	private String usernameLower;
+	
 	@ElementCollection
 	@JsonProperty(access = Access.WRITE_ONLY)
     @OrderColumn(name = "user_salt", nullable = false)
@@ -96,6 +100,10 @@ public class User {
 		this.profilePhoto = profilePhoto;
 	}
 	
+	@JsonIgnore
+	public String getUsernameLower() {
+		return this.usernameLower;	
+	}
 	
 	@JsonIgnore
 	public String getPassword() {
@@ -116,5 +124,7 @@ public class User {
 	public byte[] getSalt() {
 		return salt;
 	}
+	
+	
 
 }

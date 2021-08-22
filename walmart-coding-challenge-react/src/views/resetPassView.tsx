@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react'
 import ResetPass from '../components/reset-pass/resetPassComp'
 
-
-
 const ResetPassView = () => {
-    return(
-        <>
-            <ResetPass />
-        </>
-    );
+  return (
+    <>
+      <ResetPass />
+    </>
+  )
 }
 
-export default ResetPassView;
+export default ResetPassView

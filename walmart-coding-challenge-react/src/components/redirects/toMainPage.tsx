@@ -1,14 +1,12 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 
+export default function SignInRedirect () {
+  const history = useHistory()
 
-export default function SignInRedirect() {
-    const history = useHistory();
-
-    return(
-        <>
-            {history.push('/home')}
-        </>
-    );
-
+  return (
+    <>
+      {history.push('/home')}
+    </>
+  )
 }

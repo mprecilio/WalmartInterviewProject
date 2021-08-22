@@ -12,7 +12,11 @@ public interface LoginDao  extends JpaRepository<User, Integer>  {
 	////////////////////////////////////////////////// READ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	public User findByUsername(String username);
 	
+	public User findByUsernameLower(String usernameLower);
+	
 	public boolean existsByUsername(String username);
+	
+	public boolean existsByUsernameLower(String usernameLower);
 	
 	public boolean existsByEmail(String email);
 	
