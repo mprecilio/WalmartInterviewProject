@@ -26,7 +26,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {}
 
-export default function MediaCard (props: IProps) {
+/**
+ * @author revature.matthew.precilio
+ *
+ * Handles rednering for View Profile card
+ *
+ */
+
+export default function ViewProfileCard (props: IProps) {
   const classes = useStyles()
 
   const state: IAppState | null = useSelector((state: State) => state.login)

@@ -37,18 +37,26 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const LoginComponent = () => {
+/**
+ * @author revature.matthew.precilio
+ *
+ * This component displays the send email for reset pass page. Once username data is validated, the
+ * user info is stored in the redux store.
+ *    -Note the view will change based on the width of the page
+ *
+ * @returns
+ */
+
+const SendEmail = () => {
   const classes = useStyles()
   const [isDesktop, setIsDesktop] = React.useState(window.innerWidth)
   const [username, setUsername] = React.useState('')
   const [validUser, setValidUser] = React.useState(true)
   const [success, setSuccess] = React.useState(false)
 
-  React.useEffect(() => {
-    window.addEventListener('resize', () => {
-      setIsDesktop(window.innerWidth)
-    })
-  }, [isDesktop])
+  window.addEventListener('resize', () => {
+    setIsDesktop(window.innerWidth)
+  })
 
   const handleEmail = async (eve: SyntheticEvent) => {
     eve.preventDefault()
@@ -98,7 +106,7 @@ const LoginComponent = () => {
                   }}
                   id='outlined-basic'
                   label='Username'
-                  name="username"
+                  name='username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
                   }}
@@ -163,7 +171,7 @@ const LoginComponent = () => {
                   }}
                   id='outlined-basic'
                   label='Username'
-                  name="username"
+                  name='username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
                   }}
@@ -189,4 +197,4 @@ const LoginComponent = () => {
   )
 }
 
-export default LoginComponent
+export default SendEmail

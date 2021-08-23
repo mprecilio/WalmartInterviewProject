@@ -37,6 +37,16 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * This component displays the reset pass page. Once reset pass data is validated, the
+ * user will be notified.
+ *    -Note the view will change based on the width of the page
+ *
+ * @returns
+ */
+
 const LoginComponent = () => {
   const classes = useStyles()
   const [isDesktop, setIsDesktop] = React.useState(window.innerWidth)

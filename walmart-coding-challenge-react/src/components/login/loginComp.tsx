@@ -41,6 +41,16 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * This component displays the login page. Once login data is validated, the
+ * user info is stored in the redux store.
+ *    -Note the view will change based on the width of the page
+ *
+ * @returns
+ */
+
 const LoginComponent = () => {
   const classes = useStyles()
   const dispatch = useDispatch()
@@ -51,11 +61,7 @@ const LoginComponent = () => {
 
   const { login } = bindActionCreators(ActionCreators, dispatch)
 
-  React.useEffect(() => {
-    window.addEventListener('resize', () => {
-      setIsDesktop(window.innerWidth)
-    })
-  }, [isDesktop])
+  window.addEventListener('resize', () => { setIsDesktop(window.innerWidth) })
 
   const handleLogin = async (eve: SyntheticEvent) => {
     eve.preventDefault()
@@ -70,7 +76,7 @@ const LoginComponent = () => {
 
   return (
     <>
-      {isDesktop > 700 ? (
+      {isDesktop > 700 ? ( // Set the width at which you want the ui to change to mobile view
         <div className={classes.mainDiv}>
           <img className={classes.portalLogo} alt='' src={logo} />
           <Grid className={classes.outerGridContainer} container spacing={1}>
@@ -99,7 +105,7 @@ const LoginComponent = () => {
                   }}
                   id='outlined-basic'
                   label='Username'
-                  name="username"
+                  name='username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
                   }}
@@ -110,7 +116,7 @@ const LoginComponent = () => {
                   type='password'
                   id='outlined-basic'
                   label='Password'
-                  name="password"
+                  name='password'
                   onChange={(eve) => {
                     setPassword(eve.target.value)
                   }}
@@ -172,7 +178,7 @@ const LoginComponent = () => {
                   }}
                   id='outlined-basic'
                   label='Username'
-                  name="username"
+                  name='username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
                   }}
@@ -183,7 +189,7 @@ const LoginComponent = () => {
                   type='password'
                   id='outlined-basic'
                   label='Password'
-                  name="password"
+                  name='password'
                   onChange={(eve) => {
                     setPassword(eve.target.value)
                   }}

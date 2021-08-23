@@ -55,7 +55,18 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {}
 
-export default function MediaCard (props: IProps) {
+/**
+ * @author revature.matthew.precilio
+ *
+ * Handles rendering card for editing profile.
+ * Calls service edit profile function to update user
+ * info. Updates user info in redux store.
+ *
+ * @param props
+ * @returns
+ */
+
+export default function EditProfileCard (props: IProps) {
   const classes = useStyles()
   const dispatch = useDispatch()
   const { update } = bindActionCreators(ActionCreators, dispatch)
@@ -76,6 +87,7 @@ export default function MediaCard (props: IProps) {
   const [lname, setLname] = React.useState('')
   const [address, setAddress] = React.useState('')
   const [profilePhoto, setProfilePhoto] = React.useState(currPicture)
+  // State for image key
   const [compTempKey, setTempKey] = React.useState(imageKey)
   const { editProfile, setEditProfile, setImgKey } = useContext(EditProfileContext)
 
@@ -105,7 +117,7 @@ export default function MediaCard (props: IProps) {
 
   return (
     <>
-      {editProfile ? (
+      {editProfile && (
         <div
           style={{
             zIndex: 99,
@@ -140,13 +152,14 @@ export default function MediaCard (props: IProps) {
             onChange={saveImageToBucket}
           >
             <CardActionArea disableRipple>
+              {/* Close edit card */}
               <CloseIcon
                 style={{ marginTop: '10px', marginLeft: '90%' }}
                 onClick={() => {
                   setEditProfile(false)
                 }}
               />
-
+              {/* Profile photo */}
               <Avatar
                 alt='Remy Sharp'
                 src={profilePhoto}
@@ -160,6 +173,7 @@ export default function MediaCard (props: IProps) {
                   noValidate
                   autoComplete='off'
                 >
+                  {/* Edit profile photo */}
                   <label>Profile photo</label>
                   <Form.Control
                     type='file'
@@ -168,6 +182,7 @@ export default function MediaCard (props: IProps) {
                   />
                   <Grid container spacing={1}>
                     <Grid item xs={6}>
+                      {/* Edit first name */}
                       <TextField
                         className={classes.middleTextboxes}
                         id='outlined-basic'
@@ -178,6 +193,7 @@ export default function MediaCard (props: IProps) {
                       />
                     </Grid>
                     <Grid item xs={6}>
+                      {/* Edit last name */}
                       <TextField
                         className={classes.middleTextboxes}
                         id='outlined-basic'
@@ -188,6 +204,7 @@ export default function MediaCard (props: IProps) {
                       />
                     </Grid>
                   </Grid>
+                  {/* Edit dob */}
                   <TextField
                     className={classes.middleTextboxes}
                     id='outlined-basic'
@@ -199,6 +216,7 @@ export default function MediaCard (props: IProps) {
                     }}
                   />
                   <br />
+                  {/* Edit Address */}
                   <TextField
                     className={classes.middleTextboxes}
                     id='outlined-basic'
@@ -222,7 +240,7 @@ export default function MediaCard (props: IProps) {
             </CardActionArea>
           </Card>
         </div>
-      ) : null}
+      )}
     </>
   )
 }

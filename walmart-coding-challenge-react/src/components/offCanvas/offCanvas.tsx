@@ -11,6 +11,16 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * Side navbar components.
+ * Contains links to home,grades, etc pages.
+ *    -Note all pages other than main are currently unavailable
+ *
+ * @returns render side navbar
+ */
+
 function SidePanel () {
   const history = useHistory()
   const classes = useStyles()

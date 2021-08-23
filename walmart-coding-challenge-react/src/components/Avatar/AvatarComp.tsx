@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Storage } from 'aws-amplify'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Avatar from '@material-ui/core/Avatar'
-
 export interface IProps {
   profilePhoto: string
 }
@@ -19,6 +18,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: theme.spacing(7)
   }
 }))
+
+/**
+ * @author revature.matthew.precilio
+ *
+ * Component displays the user's profile image as a circular avatar
+ *    -This avatar is large. Used for user list and viewing/editing profile
+ *
+ * @param props - takes the imgage key stored in redux store as a prop
+ */
 
 const UserAvatar: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles()

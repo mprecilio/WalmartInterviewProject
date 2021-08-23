@@ -52,7 +52,15 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function BottomAppBar () {
+/**
+ * @author revature.matthew.precilio
+ *
+ * This component displays the the list of all users.
+ *
+ * @returns
+ */
+
+export default function UserList () {
   const classes = useStyles()
   const state: IAppState | null = useSelector((state: State) => state.login)
   let currUser: string
