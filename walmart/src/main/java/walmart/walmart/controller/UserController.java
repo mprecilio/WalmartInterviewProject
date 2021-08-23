@@ -32,12 +32,20 @@ public class UserController {
 	
 	
 	//////////////////////////////////////////////////READ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	/**
+	 * @author revature.matthew.precilio
+	 * @return List of all users in database
+	 */
 	@GetMapping(value="/get-all-users")
 	public List<User> getAllUsers(){
 		return userServ.getAllUsers();
 	}
 		
 	//////////////////////////////////////////////////UPDATE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	/**
+	 * @author revature.matthew.precilio
+	 * @return the updated current user details
+	 */
 	@PutMapping(value="/update-user-info")
 	public User updateUserInfo(@RequestBody User updateInfo){
 		return userServ.updateUserInfo(updateInfo);
