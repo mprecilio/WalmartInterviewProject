@@ -20,6 +20,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }))
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * Component displays the user's profile image as a circular avatar
+ *    -This avatar is large. Used for user list and viewing/editing profile
+ *
+ * @param None
+ */
+
 const UserAvatar: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles()
   let intialState: any

@@ -1,6 +1,15 @@
 import { Carousel } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * Bootstrap carousel component.
+ *    -Note currently only used for displaying important news and upcoming events.
+ *
+ * @returns render for photo carousel
+ */
+
 const PhotoGallery = () => {
   return (
     <Carousel style={{ margin: '0px 15px', marginTop: '10px' }}>

@@ -52,7 +52,7 @@ const RegisterComp = () => {
   const [dob, setDob] = React.useState('')
   const [address, setAddress] = React.useState('')
   const [email, setEmail] = React.useState('')
-  const [isEmail, setIsEmail] = React.useState(true);
+  const [isEmail, setIsEmail] = React.useState(true)
   const [validRegister, setValidRegister] = React.useState(true)
   const [validUsername, setValidUsername] = React.useState(true)
   const [validEmail, setValidEmail] = React.useState(true)
@@ -70,7 +70,7 @@ const RegisterComp = () => {
     setValidRegister(true)
     setValidUsername(true)
     setValidEmail(true)
-    setIsEmail(true);
+    setIsEmail(true)
     if (
       !username ||
       !password ||
@@ -83,9 +83,9 @@ const RegisterComp = () => {
       setValidRegister(false)
       return
     }
-    if(!emailChecker(email)){
-      setIsEmail(false);
-      return;
+    if (!emailChecker(email)) {
+      setIsEmail(false)
+      return
     }
     const axiosResult: IAppState | null = await axiosRegister(
       username,
@@ -103,6 +103,16 @@ const RegisterComp = () => {
       if (axiosResult.loggedUser.userId === -2) setValidEmail(false)
     }
   }
+
+  /**
+ * @author revature.matthew.precilio
+ *
+ * This component displays the registration page. Once registration data is validated, the
+ * user info is stored in the redux store.
+ *    -Note the view will change based on the width of the page
+ *
+ * @returns
+ */
 
   return (
     <>
@@ -150,7 +160,7 @@ const RegisterComp = () => {
                     borderRadius: '4px'
                   }}
                   id='outlined-basic'
-                  name="username"
+                  name='username'
                   label='Username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
@@ -161,7 +171,7 @@ const RegisterComp = () => {
                   required
                   className={classes.middleTextboxes}
                   type='password'
-                  name="password"
+                  name='password'
                   id='outlined-basic'
                   label='Password'
                   onChange={(eve) => {
@@ -179,7 +189,7 @@ const RegisterComp = () => {
                       required
                       className={classes.middleTextboxes}
                       id='outlined-basic'
-                      name="fname"
+                      name='fname'
                       label='First name'
                       onChange={(eve) => {
                         setFname(eve.target.value)
@@ -195,7 +205,7 @@ const RegisterComp = () => {
                       required
                       className={classes.middleTextboxes}
                       id='outlined-basic'
-                      name="lname"
+                      name='lname'
                       label='Last name'
                       onChange={(eve) => {
                         setLname(eve.target.value)
@@ -207,7 +217,7 @@ const RegisterComp = () => {
                   className={classes.middleTextboxes}
                   required
                   id='outlined-basic'
-                  name="email"
+                  name='email'
                   label='Email address'
                   type='email'
                   onChange={(eve) => {
@@ -220,7 +230,7 @@ const RegisterComp = () => {
                   className={classes.middleTextboxes}
                   id='outlined-basic'
                   type='date'
-                  name="dob"
+                  name='dob'
                   InputLabelProps={{ shrink: true }}
                   label='Date of birth'
                   onChange={(eve) => {
@@ -233,7 +243,7 @@ const RegisterComp = () => {
                   className={classes.middleTextboxes}
                   id='outlined-basic'
                   label='Address'
-                  name="address"
+                  name='address'
                   onChange={(eve) => {
                     setAddress(eve.target.value)
                   }}
@@ -308,7 +318,7 @@ const RegisterComp = () => {
                     borderRadius: '4px'
                   }}
                   id='outlined-basic'
-                  name="username"
+                  name='username'
                   label='Username'
                   onChange={(eve) => {
                     setUsername(eve.target.value)
@@ -319,7 +329,7 @@ const RegisterComp = () => {
                   required
                   className={classes.middleTextboxes}
                   type='password'
-                  name="password"
+                  name='password'
                   id='outlined-basic'
                   label='Password'
                   onChange={(eve) => {
@@ -336,7 +346,7 @@ const RegisterComp = () => {
                     <TextField
                       required
                       className={classes.middleTextboxes}
-                      name="fname"
+                      name='fname'
                       id='outlined-basic'
                       label='First name'
                       onChange={(eve) => {
@@ -353,7 +363,7 @@ const RegisterComp = () => {
                       required
                       className={classes.middleTextboxes}
                       id='outlined-basic'
-                      name="lname"
+                      name='lname'
                       label='Last name'
                       onChange={(eve) => {
                         setLname(eve.target.value)
@@ -366,7 +376,7 @@ const RegisterComp = () => {
                   required
                   id='outlined-basic'
                   label='Email address'
-                  name="email"
+                  name='email'
                   type='email'
                   onChange={(eve) => {
                     setEmail(eve.target.value)
@@ -378,7 +388,7 @@ const RegisterComp = () => {
                   className={classes.middleTextboxes}
                   id='outlined-basic'
                   type='date'
-                  name="dob"
+                  name='dob'
                   InputLabelProps={{ shrink: true }}
                   label='Date of birth'
                   onChange={(eve) => {
@@ -390,7 +400,7 @@ const RegisterComp = () => {
                   required
                   className={classes.middleTextboxes}
                   id='outlined-basic'
-                  name="address"
+                  name='address'
                   label='Address'
                   onChange={(eve) => {
                     setAddress(eve.target.value)

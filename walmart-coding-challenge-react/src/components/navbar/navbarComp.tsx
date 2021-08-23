@@ -36,6 +36,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * @author revature.matthew.precilio
+ *
+ * Navbar component. Manages condiation redering of view profile, edit
+ * profile, and side navbar.
+ *
+ */
+
 export default function NavBar () {
   const classes = useStyles()
 
