@@ -100,6 +100,8 @@ public class User {
 		this.profilePhoto = profilePhoto;
 	}
 	
+	////////////// JSON ignores \\\\\\\\\\\\\\\
+	
 	@JsonIgnore
 	public String getUsernameLower() {
 		return this.usernameLower;	

@@ -9,7 +9,8 @@ public interface LoginService {
 	 * 
 	 * This method is used to register a new user
 	 * 
-	 * @param myUser
+	 * @param User object with an id of -1 if the username is already taken, a -2
+	 * 		   if the email is already in use, else returns a user obj wuth user data
 	 */
 	public User save(User newUser);
 	

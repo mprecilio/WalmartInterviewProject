@@ -57,7 +57,9 @@ public class LoginServiceImpl implements LoginService{
 	//////////////////////////////////////////////////READ\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	@Override
 	public User login(User userLoggingIn) {
+		//Check if username exists in database
 		if(!loginDao.existsByUsernameLower(userLoggingIn.getUsername().toLowerCase())) return new User(-1);
+		//Gets user with matching username from database and compares hashed passwords
 		User matchingUser = loginDao.findByUsernameLower(userLoggingIn.getUsername().toLowerCase());
 		byte[] storedSalt = matchingUser.getSalt();
 		String loginPassHashed="";
@@ -73,7 +75,9 @@ public class LoginServiceImpl implements LoginService{
 
 	@Override
 	public boolean sendEmail(String username) {
+		//Check user with matching username exists
 		if(!loginDao.existsByUsername(username)) return false;
+		//Sends an email to matching user containing a reset link
 		User matchingUser = loginDao.findByUsername(username);
 		try {
 			SendingMail.sendMail(matchingUser.getEmail(), matchingUser.getUsername(), matchingUser.getToken());
